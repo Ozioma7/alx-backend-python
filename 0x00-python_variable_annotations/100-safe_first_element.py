@@ -2,12 +2,11 @@
 """Duck Type"""
 
 
-from typing import Optional, TypeVar
+from typing import Union, Any, Sequence
 
 
-T = TypeVar('T')
-
-def safe_first_element(lst: list[T]) -> Optional[T]:
+def safe_first_element(lst: Sequence[Any]) -> Union[Any, None]:
+    """Safe first element"""
     if lst:
         return lst[0]
     else:
